@@ -4,7 +4,7 @@
 # official:
 FROM docker.elastic.co/elasticsearch/elasticsearch:7.7.1
 
-RUN bin/elasticsearch-plugin install ingest-attachment
+RUN bin/elasticsearch-plugin install --batch ingest-attachment
 
 # remove x-pack because of license problems spamming log file with massive amounts of errors
 RUN bin/elasticsearch-plugin remove x-pack --purge \
